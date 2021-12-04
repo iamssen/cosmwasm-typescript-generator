@@ -1,0 +1,18 @@
+{
+  "name": "@examples/anchor",
+  "version": "0.1.0",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "download-schema": "zx ./scripts/download-schema.mjs",
+    "generate": "zx ./scripts/generate.mjs",
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "copy-github-directory": "^1.4.1",
+    "cosmwasm-typescript-generator": "*",
+    "typescript": "^4.5.2",
+    "zx": "^4.2.0"
+  }
+}
