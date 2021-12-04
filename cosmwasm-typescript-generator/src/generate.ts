@@ -83,6 +83,7 @@ export async function generate({
 
   const printer = createPrinter();
   const code = [
+    `// DO NOT EDIT MANUALLY : THIS FILE IS AUTO CREATED`,
     `/* eslint-disable @typescript-eslint/no-shadow */`,
     `//noinspection JSUnusedGlobalSymbols`,
     ``,
