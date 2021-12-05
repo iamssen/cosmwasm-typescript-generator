@@ -968,7 +968,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/fs-extra@npm:^9.0.12":
+"@types/fs-extra@npm:^9.0.12, @types/fs-extra@npm:^9.0.13":
   version: 9.0.13
   resolution: "@types/fs-extra@npm:9.0.13"
   dependencies:
@@ -2167,11 +2167,14 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "cosmwasm-typescript-generator@workspace:cosmwasm-typescript-generator"
   dependencies:
+    "@types/fs-extra": ^9.0.13
     "@types/glob": ^7.2.0
     "@types/json-schema": ^7.0.9
     change-case: ^4.1.2
+    fs-extra: ^10.0.0
     glob: ^7.2.0
     json-schema: ^0.4.0
+    rimraf: ^3.0.2
     typescript: ^4.5.2
   languageName: unknown
   linkType: soft
