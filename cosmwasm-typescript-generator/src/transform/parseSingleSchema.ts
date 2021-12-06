@@ -36,15 +36,18 @@ export function parseInterface(
   schema: JSONSchema7,
   getTypeNode: GetTypeNode,
 ): InterfaceDeclaration {
-  return factory.createInterfaceDeclaration(
-    undefined,
-    [factory.createModifier(SyntaxKind.ExportKeyword)],
-    factory.createIdentifier(name),
-    undefined,
-    undefined,
-    schema.properties
-      ? parseProperties(schema.properties, schema.required ?? [], getTypeNode)
-      : [],
+  return attachComment(
+    factory.createInterfaceDeclaration(
+      undefined,
+      [factory.createModifier(SyntaxKind.ExportKeyword)],
+      factory.createIdentifier(name),
+      undefined,
+      undefined,
+      schema.properties
+        ? parseProperties(schema.properties, schema.required ?? [], getTypeNode)
+        : [],
+    ),
+    schema,
   );
 }
 

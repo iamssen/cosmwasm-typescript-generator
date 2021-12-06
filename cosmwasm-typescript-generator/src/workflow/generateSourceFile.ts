@@ -31,7 +31,10 @@ export async function generateSourceFile(
       }
 
       try {
-        if (schema.title && Array.isArray(schema.anyOf)) {
+        if (
+          schema.title &&
+          (Array.isArray(schema.anyOf) || Array.isArray(schema.oneOf))
+        ) {
           statements.push(parseGroupSchema(schema, getTypeNode));
         } else if (schema.title) {
           statements.push(parseSingleSchema(schema, getTypeNode));

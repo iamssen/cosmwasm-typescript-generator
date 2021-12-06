@@ -80,13 +80,7 @@ export function createTypeStore(): {
       }
       // export interface T { ... }
       else if (definition.type === 'object') {
-        types.set(
-          name,
-          attachComment(
-            parseInterface(name, definition, getTypeNode),
-            definition,
-          ),
-        );
+        types.set(name, parseInterface(name, definition, getTypeNode));
       } else {
         throw new Error(
           `Unknown case: definition.type is "${definition.type}"`,

@@ -16,7 +16,8 @@ export function parseGroupSchema(
   getTypeNode: GetTypeNode,
 ): ModuleDeclaration {
   const name = schema.title!;
-  const interfaces: InterfaceDeclaration[] = schema.anyOf!.map((msg) => {
+  const interfaces: InterfaceDeclaration[] = (schema.anyOf ??
+    schema.oneOf)!.map((msg) => {
     if (typeof msg !== 'object') {
       throw new Error(`msg is not a object!`);
     }

@@ -1,16 +1,9 @@
 import fs from 'fs';
-import { createPrinter, SourceFile } from 'typescript';
+import { SourceFile } from 'typescript';
+import { generateTypeScript } from './generateTypeScript';
 
 export function writeTypeScript(source: SourceFile, outFile: string) {
-  const printer = createPrinter();
-  const code = [
-    `// DO NOT EDIT MANUALLY : THIS FILE IS AUTO CREATED`,
-    `/* eslint-disable */`,
-    `// prettier-ignore`,
-    `// noinspection JSUnusedGlobalSymbols`,
-    ``,
-    printer.printFile(source).replace(/\/\*/g, '/**'),
-  ].join('\n');
+  const code = generateTypeScript(source);
 
   fs.writeFileSync(outFile, code, {
     encoding: 'utf8',
