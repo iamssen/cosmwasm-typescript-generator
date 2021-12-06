@@ -1,12 +1,13 @@
 {
   "name": "cosmwasm-typescript-generator",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "author": "Seoyeon Lee <i@ssen.name>",
   "license": "MIT",
   "repository": "https://github.com/iamssen/cosmwasm-typescript-generator",
   "scripts": {
     "clean": "rimraf ./commonjs && rimraf esm",
-    "build": "npm run clean && tsc --project ./tsconfig.commonjs.json && tsc --project ./tsconfig.esm.json"
+    "build": "npm run clean && tsc --project ./tsconfig.commonjs.json && tsc --project ./tsconfig.esm.json",
+    "prepublish": "npm run build"
   },
   "main": "commonjs/index.js",
   "module": "esm/index.js",
