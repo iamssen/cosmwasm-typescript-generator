@@ -2,8 +2,7 @@
 
 ```sh
 npm run download-schema # download ~/schema/*/*.json files
-npm run generate # create index.ts file
-npm run build # build index.d.ts and index.js files
+npm run generate # create anchor.types.ts file
 ```
 
-- [index.ts](./index.ts)
+- [anchor.types.ts](./anchor.types.ts)

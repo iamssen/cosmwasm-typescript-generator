@@ -14,6 +14,7 @@
     "outDir": "lib"
   },
   "include": [
-    "index.ts"
+    "index.ts",
+    "anchor.types.ts"
   ]
 }

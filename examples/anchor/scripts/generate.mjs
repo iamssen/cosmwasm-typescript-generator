@@ -1,5 +1,6 @@
 import { generate } from 'cosmwasm-typescript-generator';
 
 generate({
-  root: path.resolve(__dirname, '..'),
+  schemaDir: path.resolve(__dirname, '../schema'),
+  outFile: path.resolve(__dirname, '../anchor.types.ts'),
 });
