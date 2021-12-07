@@ -1,6 +1,6 @@
 {
   "name": "cosmwasm-typescript-generator",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "author": "Seoyeon Lee <i@ssen.name>",
   "license": "MIT",
   "repository": "https://github.com/iamssen/cosmwasm-typescript-generator",

@@ -5,7 +5,7 @@ import { writeTypeScript } from './workflow/writeTypeScript';
 
 interface Params {
   schemaDir: string;
-  outFile: string;
+  outFile: string | string[];
 }
 
 export async function generate({ schemaDir, outFile }: Params) {
@@ -13,5 +13,10 @@ export async function generate({ schemaDir, outFile }: Params) {
     path.resolve(process.cwd(), schemaDir),
   );
   const sourceFile = await generateSourceFile(schemaSource);
-  writeTypeScript(sourceFile, path.resolve(process.cwd(), outFile));
+
+  const files = Array.isArray(outFile) ? outFile : [outFile];
+  writeTypeScript(
+    sourceFile,
+    files.map((file) => path.resolve(process.cwd(), file)),
+  );
 }
